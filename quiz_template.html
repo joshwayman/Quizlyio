@@ -1,0 +1,59 @@
+<!-- This container is important as it is what the JS looks for when it is initializing -->
+<div id="quizlyio-container">  
+    <!-- START: Question 1 -->  
+    <!-- 
+       Add quizlyio data attributes to tell the JS what the answer is 
+        - data-quizlyio-question - is the question number
+        - data-quizlyio-answer - is the answer. Currently only one question can be correct.
+    -->
+    <div class="quizlyio-question my-class" data-quizlyio-question="1" data-quizlyio-answer="b">  
+       <!-- Question needs to go in this container. -->
+        <div class="quizlyio-question-title">
+            <p>1.	Which disease is the biggest killer of children under five?</p>
+        </div>  
+        <!-- 
+            All answers need to follow this code pattern. The JS adds a class to the label tags which the CSS changes colour based on it being correct or not 
+            -->
+        <div class="quizlyio-question-answers">  
+            <label><input type="radio" name="q1" value="a"> Diarrhoea </label>
+            <label><input type="radio" name="q1" value="b"> Pneumonia </label>
+            <label><input type="radio" name="q1" value="c"> Malaria </label>
+        </div>  
+        
+        <!-- 
+            This is the text that is revealed when the question is answered. Leave the conatiner empty if this is not required 
+        -->
+        <div class="quizlyio-question-reveal">
+            <p class="quizlyio-question-response"></p>
+            <p>Pneumonia. Described as “the forgotten killer”, pneumonia is the largest infectious cause of death in children worldwide. More children die from pneumonia then malaria, AIDS and measles combined. <a href="https://www.compassion.com.au/stop-their-suffering">The good news is you can act now to stop future deaths</a>. Pneumonia is easily treatable with inexpensive antibiotics.</p>
+            <p>Source: <a href="http://www.who.int/mediacentre/factsheets/fs331/en/" rel="nofollow" target="_blank">WHO</a></p>
+        </div>
+    </div> 
+    <!-- END: Question 1 -->
+    
+    <!-- START: Results -->
+    <!-- 
+        This is where the results are displayed when all answers are completed. It will automatically display when it detects all answers are done. Any tag with an ID is required by the JS. I haven't built a fallback yet.
+    -->
+    <div class="quizlyio-result-box" id="quizlyio-result" style="display: none;">
+        <p>How much do you know about dangerous disease in the developing world?</p>
+        <h3>You got <span id="quizlyio-score"></span> out of <span id="quizlyio-max-score"></span> correct!</h3>
+
+        <h3 id="quizlyio-score-message">
+            <span id="quizlio-score-80" style="display: none;">With medical knowledge like this, you should consider a career change!</span>
+            <span id="quizlio-score-50" style="display: none;">Are you a medical student? </span>
+            <span id="quizlio-score-40" style="display: none;">Don’t be too hard on yourself. It was tough!</span>
+
+        </h3>
+        <!--
+            Social sharing if you want it. There is a bit of funkyness to creating the social share links but if you know how to read a URL you will be able to work it out.
+        -->
+        <div class="social_sharing">
+            <ul>
+                <li class="js-social-share facebook"><a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.compassion.com.au%2Fblog%2Ftest-your-knowledge-of-deadly-diseases" target="_blank">Facebook</a></li>
+                <li class="js-social-share twitter"><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.compassion.com.au%2Fblog%2Ftest-your-knowledge-of-deadly-diseases&text=How%20much%20do%20you%20know%20about%20dangerous%20disease%20in%20the%20developing%20world%3F&hashtags=stoptheirsuffering" target="_blank">Twitter</a></li>
+            </ul>
+        </div>
+    </div> 
+    <!-- END: Results -->
+</div>

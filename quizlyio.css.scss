@@ -1,0 +1,125 @@
+/*
+ * quizlyio.scss
+ * It is for quizes
+ *
+ * Author: Josh Wayman @joshwayman
+ * Copyright 2017 Compassion Australia
+ **/
+
+
+// import the base styles
+@import "../base";
+
+
+.quizlyio-question {
+    margin-bottom: 45px;
+}
+
+#quizlyio-container .quizlyio-question {
+    .quizlyio-question-title p {
+        @include roboto-bold-typeface;
+        @include font-sizer(20, 30);
+        margin: 0 0 0.75em;
+    }    
+
+    .quizlyio-question-answers label {
+        @include roboto-medium-typeface;
+        @include font-sizer(18, 26);
+        display: block;
+        width: 100%;
+        padding: 1rem 2rem;
+        margin: 0 0 0.5em;        
+        border: solid thin #f2f2f2;
+        border-color: rgba(0,0,0,0.2);
+        border-radius: 2px;
+        
+        &:hover {
+            cursor: pointer;            
+        }
+
+        input {
+            margin-right: 1rem;
+        }
+    }  
+}
+
+
+.quizlyio-result-box {
+    background: #F6F7F7;
+    border-radius: 2px;
+    padding: 2rem 2.5rem 1rem;
+}
+
+.quizlyio-question-answers {
+    line-height: 1;
+}
+
+.quizlyio-correct {
+    background-color: #58ca68;
+    color: white;
+}
+
+.quizlyio-wrong {
+    background-color: #ee8a8a; 
+    color: white;
+}
+
+.quizlyio-question-reveal {
+    display: none;
+}
+
+.quizlyio-question-reveal.quizlyio-show {
+    display: block;
+}
+
+
+
+.social_sharing {
+        padding-top: $container-padding;
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            
+            @include media($large-screen) {
+                text-align: left;
+            }
+
+            &:before {
+                content: "Share your result: ";
+            }
+
+            li {
+                display: inline-block;
+                margin: 0 0 5px 0;
+
+                a {
+                    border: 1px solid #ccc;
+                    border-radius: 3px;
+                    padding: 0.15rem 0.5rem;
+                    margin: 0 0.2rem;   
+                    text-decoration: none;
+                    opacity: 1;
+                    transition: opacity .2s ease-in-out;
+                    
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+
+                &.facebook a {
+                    color: #fff;
+                    background-color: #3b5998;
+                    border-color: #3b5998;
+                }
+
+                &.twitter a {
+                    color: #fff;
+                    background-color: #1da1f2;
+                    border-color: #1da1f2;
+                }
+            }
+        }
+    }
